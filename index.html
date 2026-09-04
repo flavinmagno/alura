@@ -65,8 +65,8 @@
 </head>
   <body>
         <header>
-            <h1>Meu bog sobre minha banda favorita</h1>
-            <p>Vou mostrar minha banda favorita, o porquê e o meu álbum favorito</p>
+            <h1>Meu bog sobre minha meu jogo favorito</h1>
+            <p>Vou mostrar meu jogo favorito.</p>
         </header>
        
         <main>  
@@ -74,10 +74,10 @@
            
             <div>  
                 <h2>Meu primeiro post</h2>
-                <p class="artigo-autor">Por: Alexandre de Morais</p>
-                <p>Boas-vindas ao meu blog bacana, aqui falaremos sobre bandas que gosto</p>
-                <h3> megadeth:</h3>
-                <p>é sem duvida umas das que mais me influencia na questão musical e até mesmo de pensar, tem musicas incriveis como Holy wars...the punishment due, tornado of souls ou até mesmo addicted to chaos</p>
+                <p class="artigo-autor">Por: Flavio Magno</p>
+                <p>Boas-vindas ao meu blog de baixo orçamento, aqui falaremos sobre jogos que gosto</p>
+                <h3> beamng.drive:</h3>
+                <p>é sem duvida umas das que mais me influencia na questão de fisica e até mesmo de corrida, tem graficos incriveis e simulaço também.</p>
                
                 <div class="botoes-reacao">
                     <button class="btn btn-like" id="btn-like">
@@ -100,14 +100,6 @@
         const spanDislikes = document.getElementById('num-dislikes');
 
         botaoLike.addEventListener('click', () => {
-            qtdLikes++; // Soma +1
-            spanLikes.innerText = qtdLikes; // Atualiza o número na tela
+            qtdLikes++; 
+            spanLikes.innerText = qtdLikes;
         });
-
-        botaoDislike.addEventListener('click', () => {
-            qtdDislikes++; // Soma +1
-            spanDislikes.innerText = qtdDislikes; // Atualiza o número na tela
-        });
-    </script>
-</body>
-</html>
