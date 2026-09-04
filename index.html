@@ -91,16 +91,43 @@
     <script>
         let qtdLikes = 0;
         let qtdDislikes = 0;
+        let curtiu = false;
+        let naoCurtiu = false;
+
         const botaoLike = document.getElementById('btn-like');
         const botaoDislike = document.getElementById('btn-dislike');
         const spanLikes = document.getElementById('num-likes');
         const spanDislikes = document.getElementById('num-dislikes');
+
         botaoLike.addEventListener('click', () => {
-            qtdLikes++; 
+            if (curtiu === false) {
+                if (naoCurtiu === true) {
+                    qtdDislikes--;
+                    spanDislikes.innerText = qtdDislikes;
+                    naoCurtiu = false;
+                }
+                qtdLikes++;
+                curtiu = true;
+            } else {
+                qtdLikes--;
+                curtiu = false;
+            }
             spanLikes.innerText = qtdLikes;
         });
+
         botaoDislike.addEventListener('click', () => {
-            qtdDislikes++; 
+            if (naoCurtiu === false) {
+                if (curtiu === true) {
+                    qtdLikes--;
+                    spanLikes.innerText = qtdLikes;
+                    curtiu = false;
+                }
+                qtdDislikes++;
+                naoCurtiu = true;
+            } else {
+                qtdDislikes--;
+                naoCurtiu = false;
+            }
             spanDislikes.innerText = qtdDislikes;
         });
     </script>
