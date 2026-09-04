@@ -60,6 +60,10 @@
   .btn-dislike:hover {
      background-color: #da190b;
   }
+  .btn:disabled {
+     opacity: 0.5;
+     cursor: not-allowed;
+  }
 </style>  
 </head>
   <body>
@@ -91,8 +95,7 @@
     <script>
         let qtdLikes = 0;
         let qtdDislikes = 0;
-        let curtiu = false;
-        let naoCurtiu = false;
+        let jaReagiu = false;
 
         const botaoLike = document.getElementById('btn-like');
         const botaoDislike = document.getElementById('btn-dislike');
@@ -100,35 +103,23 @@
         const spanDislikes = document.getElementById('num-dislikes');
 
         botaoLike.addEventListener('click', () => {
-            if (curtiu === false) {
-                if (naoCurtiu === true) {
-                    qtdDislikes--;
-                    spanDislikes.innerText = qtdDislikes;
-                    naoCurtiu = false;
-                }
+            if (jaReagiu === false) {
                 qtdLikes++;
-                curtiu = true;
-            } else {
-                qtdLikes--;
-                curtiu = false;
+                spanLikes.innerText = qtdLikes;
+                jaReagiu = true;
+                botaoLike.disabled = true;
+                botaoDislike.disabled = true;
             }
-            spanLikes.innerText = qtdLikes;
         });
 
         botaoDislike.addEventListener('click', () => {
-            if (naoCurtiu === false) {
-                if (curtiu === true) {
-                    qtdLikes--;
-                    spanLikes.innerText = qtdLikes;
-                    curtiu = false;
-                }
+            if (jaReagiu === false) {
                 qtdDislikes++;
-                naoCurtiu = true;
-            } else {
-                qtdDislikes--;
-                naoCurtiu = false;
+                spanDislikes.innerText = qtdDislikes;
+                jaReagiu = true;
+                botaoLike.disabled = true;
+                botaoDislike.disabled = true;
             }
-            spanDislikes.innerText = qtdDislikes;
         });
     </script>
   </body>
