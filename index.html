@@ -32,7 +32,6 @@
   .artigo-autor {
      font-weight: bold;
   }
- 
   .botoes-reacao {
      display: flex;
      gap: 10px;
@@ -65,18 +64,18 @@
 </head>
   <body>
         <header>
-            <h1>Meu bog sobre minha meu jogo favorito</h1>
+            <h1>Meu blog sobre meu jogo favorito</h1>
             <p>Vou mostrar meu jogo favorito.</p>
         </header>
        
         <main>  
-            <img src="images.jpeg" alt="images sick logo">  
+            <img src="images.jpg" alt="beamng.drive logo">  
            
             <div>  
                 <h2>Meu primeiro post</h2>
                 <p class="artigo-autor">Por: Flavio Magno</p>
                 <p>Boas-vindas ao meu blog de baixo orçamento, aqui falaremos sobre jogos que gosto</p>
-                <h3> beamng.drive:</h3>
+                <h3>beamng.drive:</h3>
                 <p>é sem duvida umas das que mais me influencia na questão de fisica e até mesmo de corrida, tem graficos incriveis e simulaço também.</p>
                
                 <div class="botoes-reacao">
@@ -89,17 +88,21 @@
                 </div>
             </div>
         </main>
-
     <script>
         let qtdLikes = 0;
         let qtdDislikes = 0;
-
         const botaoLike = document.getElementById('btn-like');
         const botaoDislike = document.getElementById('btn-dislike');
         const spanLikes = document.getElementById('num-likes');
         const spanDislikes = document.getElementById('num-dislikes');
-
         botaoLike.addEventListener('click', () => {
             qtdLikes++; 
             spanLikes.innerText = qtdLikes;
         });
+        botaoDislike.addEventListener('click', () => {
+            qtdDislikes++; 
+            spanDislikes.innerText = qtdDislikes;
+        });
+    </script>
+  </body>
+</html>
