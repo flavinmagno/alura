@@ -92,35 +92,24 @@
                 </div>
             </div>
         </main>
-    <script>
-        let qtdLikes = 0;
-        let qtdDislikes = 0;
-        let jaReagiu = false;
+<script>
+    let qtdLikes = 0;
+    let qtdDislikes = 0;
 
-        const botaoLike = document.getElementById('btn-like');
-        const botaoDislike = document.getElementById('btn-dislike');
-        const spanLikes = document.getElementById('num-likes');
-        const spanDislikes = document.getElementById('num-dislikes');
+    const botaoLike = document.getElementById('btn-like');
+    const botaoDislike = document.getElementById('btn-dislike');
+    const spanLikes = document.getElementById('num-likes');
+    const spanDislikes = document.getElementById('num-dislikes');
 
-        botaoLike.addEventListener('click', () => {
-            if (jaReagiu === false) {
-                qtdLikes++;
-                spanLikes.innerText = qtdLikes;
-                jaReagiu = disabled;
-                botaoLike.disabled = disabled;
-                botaoDislike.disabled = disabled;
-            }
-        });
+    botaoLike.addEventListener('click', () => {
+        qtdLikes++;
+        spanLikes.innerText = qtdLikes;
+    });
 
-        botaoDislike.addEventListener('click', () => {
-            if (jaReagiu === false) {
-                qtdDislikes++;
-                spanDislikes.innerText = qtdDislikes;
-                jaReagiu = disabled;
-                botaoLike.disabled = disabled;
-                botaoDislike.disabled = disabled;
-            }
-        });
-    </script>
+    botaoDislike.addEventListener('click', () => {
+        qtdDislikes++;
+        spanDislikes.innerText = qtdDislikes;
+    });
+</script>
   </body>
 </html>
