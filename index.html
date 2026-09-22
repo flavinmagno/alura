@@ -1,137 +1,140 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>blog</title>
-<style>
-  header {
-          background-color: #000000;
-          color: #FFFFFF;
-          text-align: center;
-          max-width: 800px;
-          margin: 0 auto;
-          padding: 16px;
-          border: 5px solid #000000;
-  }  
-  main {
-        background-color: #FFFFFF;
-        color: #000000;
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 16px;
-        display: flex;
-        gap: 16px;
-  }
-  img {
-     width: 300px;
-     height: 300px;
-     object-fit: cover;
-     flex-shrink: 0;
-  }
-  .artigo-autor {
-     font-weight: bold;
-  }
-  .botoes-reacao {
-     display: flex;
-     gap: 10px;
-     margin-top: 15px;
-  }
-  .btn {
-     padding: 8px 16px;
-     font-size: 14px;
-     border: 2px solid #000000;
-     border-radius: 4px;
-     cursor: pointer;
-     font-weight: bold;
-     transition: background-color 0.2s;
-  }
-  .btn-like {
-     background-color: #4CAF50;
-     color: white;
-  }
-  .btn-like:hover {
-     background-color: #45a049;
-  }
-  .btn-dislike {
-     background-color: #f44336;
-     color: white;
-  }
-  .btn-dislike:hover {
-     background-color: #da190b;
-  }
-  .btn:disabled {
-     opacity: 0.5;
-     cursor: not-allowed;
-  }
-</style>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Blog de Jogos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #000000;
+            color: #FFFFFF;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+            padding: 16px;
+            border-radius: 8px;
+        }  
+
+        main {
+            background-color: #FFFFFF;
+            color: #000000;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            gap: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            flex-shrink: 0;
+            border-radius: 6px;
+        }
+
+        .artigo-autor {
+            font-weight: bold;
+            color: #555555;
+        }
+
+        .botoes-reacao {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            font-size: 14px;
+            border: 2px solid #000000;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .btn-like {
+            background-color: #4CAF50;
+            color: white;
+            border-color: #4CAF50;
+        }
+
+        .btn-like:hover {
+            background-color: #45a049;
+        }
+
+        .btn-dislike {
+            background-color: #f44336;
+            color: white;
+            border-color: #f44336;
+        }
+
+        .btn-dislike:hover {
+            background-color: #da190b;
+        }
+    </style>  
 </head>
-  <body>
-        <header>
-            <h1>Meu blog sobre meu jogo favorito</h1>
-            <p>Vou mostrar meu jogo favorito.</p>
-        </header>
+<body>
+
+    <header>
+        <h1>Meu blog sobre meu jogo favorito</h1>
+        <p>Vou mostrar meu jogo favorito.</p>
+    </header>
        
-        <main>  
-            <img src="images.jpg" alt="beamng.drive logo">  
+    <main>  
+        <img src="images.jpg" alt="BeamNG.drive logo">  
            
-            <div>  
-                <h2>Meu primeiro post</h2>
-                <p class="artigo-autor">Por: Flavio Magno</p>
-                <p>Boas-vindas ao meu blog de baixo orçamento, aqui falaremos sobre jogos que gosto</p>
-                <h3>beamng.drive:</h3>
-                <p>é sem duvida umas das que mais me influencia na questão de fisica e até mesmo de corrida, tem graficos incriveis e simulaço também.</p>
+        <div>  
+            <h2>Meu primeiro post</h2>
+            <p class="artigo-autor">Por: Flavio Magno</p>
+            <p>Boas-vindas ao meu blog! Aqui falaremos sobre jogos que gosto.</p>
+            
+            <h3>BeamNG.drive</h3>
+            <p>É sem dúvida um dos jogos que mais me influencia na questão de física e corrida. Tem gráficos incríveis e uma simulação impressionante.</p>
                
-                <div class="botoes-reacao">
-                    <button class="btn btn-like" id="btn-like">
-                        👍 Like (<span id="num-likes">0</span>)
-                    </button>
-                    <button class="btn btn-dislike" id="btn-dislike">
-                        👎 Dislike (<span id="num-dislikes">0</span>)
-                    </button>
-                     <h2>oi<h2>
-                </div>
-           </div>        
-        </main>
-                     <main>
+            <div class="botoes-reacao">
+                <button class="btn btn-like" id="btn-like">
+                    👍 Like (<span id="num-likes">0</span>)
+                </button>
+                <button class="btn btn-dislike" id="btn-dislike">
+                    👎 Dislike (<span id="num-dislikes">0</span>)
+                </button>
+            </div>
+        </div>        
+    </main>
 
-               <div>
-                        <h2>Meu primeiro post</h2>
-                <p class="artigo-autor">Por: Flavio Magno</p>
-                <p>Boas-vindas ao meu blog de baixo orçamento, aqui falaremos sobre jogos que gosto</p>
-                <h3>beamng.drive:</h3>
-                <p>é sem duvida umas das que mais me influencia na questão de fisica e até mesmo de corrida, tem graficos incriveis e simulaço também.</p>
-               
-                <div class="botoes-reacao">
-                    <button class="btn btn-like" id="btn-like">
-                        👍 Like (<span id="num-likes">0</span>)
-                    </button>
-                    <button class="btn btn-dislike" id="btn-dislike">
-                        👎 Dislike (<span id="num-dislikes">0</span>)
-                    </button>
-                     <h2>oi<h2> 
-               </div>
-          </div>
-                                         
-                          
-<script>
-    let qtdLikes = 0;
-    let qtdDislikes = 0;
+    <script>
+        let qtdLikes = 0;
+        let qtdDislikes = 0;
 
-    const botaoLike = document.getElementById('btn-like');
-    const botaoDislike = document.getElementById('btn-dislike');
-    const spanLikes = document.getElementById('num-likes');
-    const spanDislikes = document.getElementById('num-dislikes');
+        const botaoLike = document.getElementById('btn-like');
+        const botaoDislike = document.getElementById('btn-dislike');
+        const spanLikes = document.getElementById('num-likes');
+        const spanDislikes = document.getElementById('num-dislikes');
 
-    botaoLike.addEventListener('click', () => {
-        qtdLikes++;
-        spanLikes.innerText = qtdLikes;
-    });
+        botaoLike.addEventListener('click', () => {
+            qtdLikes++;
+            spanLikes.innerText = qtdLikes;
+        });
 
-    botaoDislike.addEventListener('click', () => {
-        qtdDislikes++;
-        spanDislikes.innerText = qtdDislikes;
-    });
-</script>
-  </body>
+        botaoDislike.addEventListener('click', () => {
+            qtdDislikes++;
+            spanDislikes.innerText = qtdDislikes;
+        });
+    </script>
+</body>
 </html>
