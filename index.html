@@ -22,16 +22,25 @@
             border-radius: 8px;
         }  
 
+        /* Container principal que envelopa os posts e os joga para baixo */
         main {
+            max-width: 840px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column; /* Faz com que um post fique EMBAIXO do outro */
+            gap: 20px;
+        }
+
+        /* Cada post individual agora controla seu próprio alinhamento lado a lado */
+        article {
             background-color: #FFFFFF;
             color: #000000;
-            max-width: 800px;
-            margin: 0 auto;
             padding: 20px;
             display: flex;
             gap: 20px;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            flex-wrap: wrap; /* Evita que quebre em telas de celular */
         }
 
         img {
@@ -60,7 +69,7 @@
             border-radius: 4px;
             cursor: pointer;
             font-weight: bold;
-            transition: background-color 0.2s;
+            transition: background-color 0.2s, transform 0.1s;
         }
 
         .btn:active {
@@ -96,44 +105,39 @@
     </header>
        
     <main>  
-        <img src="images.jpg" alt="BeamNG.drive logo">  
-           
-        <div>  
-            <h2>Meu primeiro post</h2>
-            <p class="artigo-autor">Por: Flavio Magno</p>
-            <p>Boas-vindas ao meu blog! Aqui falaremos sobre jogos que gosto.</p>
-            
-            <h3>BeamNG.drive</h3>
-            <p>É sem dúvida um dos jogos que mais me influencia na questão de física e corrida. Tem gráficos incríveis e uma simulação impressionante.</p>
+        <!-- PRIMEIRO POST -->
+        <article>
+            <img src="images.jpg" alt="BeamNG.drive logo">  
                
-            <div class="botoes-reacao">
-                <button class="btn btn-like" id="btn-like">
-                    👍 Like (<span id="num-likes">0</span>)
-                </button>
-                <button class="btn btn-dislike" id="btn-dislike">
-                    👎 Dislike (<span id="num-dislikes">0</span>)
-                </button>
+            <div>  
+                <h2>Meu primeiro post</h2>
+                <p class="artigo-autor">Por: Flavio Magno</p>
+                <p>Boas-vindas ao meu blog! Aqui falaremos sobre jogos que gosto.</p>
+                
+                <h3>BeamNG.drive</h3>
+                <p>É sem dúvida um dos jogos que mais me influencia na questão de física e corrida. Tem gráficos incríveis e uma simulação impressionante.</p>
+                   
+                <div class="botoes-reacao">
+                    <button class="btn btn-like" id="btn-like">
+                        👍 Like (<span id="num-likes">0</span>)
+                    </button>
+                    <button class="btn btn-dislike" id="btn-dislike">
+                        👎 Dislike (<span id="num-dislikes">0</span>)
+                    </button>
+                </div>
             </div>
-        </div>
-<img src="images.jpg" alt="BeamNG.drive logo">  
-           
-        <div>  
-            <h2>Meu primeiro post</h2>
-            <p class="artigo-autor">Por: Flavio Magno</p>
-            <p>Boas-vindas ao meu blog! Aqui falaremos sobre jogos que gosto.</p>
-            
-            <h3>BeamNG.drive</h3>
-            <p>É sem dúvida um dos jogos que mais me influencia na questão de física e corrida. Tem gráficos incríveis e uma simulação impressionante.</p>
-               
-            <div class="botoes-reacao">
-                <button class="btn btn-like" id="btn-like">
-                    👍 Like (<span id="num-likes">0</span>)
-                </button>
-                <button class="btn btn-dislike" id="btn-dislike">
-                    👎 Dislike (<span id="num-dislikes">0</span>)
-                </button>
+        </article>
+
+        <!-- SEGUNDO POST (Agora fica embaixo!) -->
+        <article>
+            <img src="images.jpg" alt="Imagem do segundo post"> <!-- Mude o link da imagem se quiser -->
+            <div> 
+                <h2>Ajuda Yoda</h2>
+                <p class="artigo-autor">Por: Flavio Magno</p>
+                <p>socorro</p>
+                <p>Que a força esteja com você! Agora este post está posicionado corretamente na parte de baixo da página.</p>
             </div>
-        </div>
+        </article>
     </main>
 
     <script>
