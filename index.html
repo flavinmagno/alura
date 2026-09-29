@@ -119,23 +119,20 @@
                 <p>agr eu consigo fazer mais um post</p>
                 
                 <div class="botoes-reacao">
-                    <button class="btn btn-like"> 👍 Like (<span class="num-likes">0</span>) </button>
-                    <button class="btn btn-dislike"> 👎 Dislike (<span class="num-dislikes">0</span>) </button>
+            <button class="btn btn-like"> 👍 Like (<span class="num-likes">0</span>) </button>
+            <button class="btn btn-dislike"> 👎 Dislike (<span class="num-dislikes">0</span>) </button>
                 </div>
             </div>
         </article>
     </main>
 
     <script>
-        // Seleciona todos os artigos da página
         const artigos = document.querySelectorAll('article');
 
-        // Passa por cada artigo e configura seus botões individualmente
         artigos.forEach(artigo => {
             let qtdLikes = 0;
             let qtdDislikes = 0;
 
-            // Busca os botões apenas DENTRO deste artigo específico
             const botaoLike = artigo.querySelector('.btn-like');
             const botaoDislike = artigo.querySelector('.btn-dislike');
             const spanLikes = artigo.querySelector('.num-likes');
